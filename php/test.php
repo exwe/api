@@ -5,6 +5,8 @@
  * Date: 18-8-22
  * Time: pm 4:09
  */
+
+//定义秘钥
 $config = [
   'key'          => 'Your API_KEY',
   'secret'       => 'Your API_SECRET',
