@@ -29,10 +29,10 @@ class Api
     //POST请求
     public function query($url, array $data = [])
     {
-        $headers = array(
+        $headers = [
             'KEY: ' . $this->key,
-            'SIGN: ' . $this->createSign($data)
-        );
+            'SIGN: ' . $this->createSign($data),
+        ];
         $url = $this->tradePath . $url;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
