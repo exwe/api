@@ -11,9 +11,20 @@ namespace Api;
 class Api
 {
     //交易API前缀
-    public $tradePath = 'https://core.exwe.com/api/';
-    public $key = "Your API_KEY";
-    public $secret = "Your API_SECRET";
+    protected $tradePath = 'https://core.exwe.com/api/';
+    protected $key = "Your API_KEY";
+    protected $secret = "Your API_SECRET";
+
+    public function __construct($config = null)
+    {
+        if (is_array($config) && count($config) > 1)
+        {
+            foreach ($config as $k => $v)
+            {
+                $this->$k = $v;
+            }
+        }
+    }
 
     //POST请求
     public function query($url, array $data = [])

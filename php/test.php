@@ -5,9 +5,12 @@
  * Date: 18-8-22
  * Time: pm 4:09
  */
-
+$config = [
+  'key'          => 'Your API_KEY',
+  'secret'       => 'Your API_SECRET',
+];
 require __DIR__ . DIRECTORY_SEPARATOR . 'Api.php';
-$api = new Api\Api();
+$api = new Api\Api($config);
 
 //行情类接口测试
 $markets = $api->getMarkets();
